@@ -1,0 +1,77 @@
+$orange: rgb(255, 152, 0);
+
+body {
+	margin: 0;
+}
+
+canvas {
+	display: block;
+	background-color: rgb(240, 240, 240);
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+button {
+	@extend .center;
+
+	padding: 0.5rem 1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	color: rgb(255, 255, 255);
+	background-color: lighten($orange, 20);
+	display: block;
+	width: 100%;
+
+	&:hover {
+		background-color: $orange;
+	}
+}
+
+input[type='file'] {
+	@extend .center;
+
+	display: block;
+	margin-bottom: 0.5rem;
+	width: 100%;
+}
+
+.play-field {
+	@extend .center;
+
+	width: 95%;
+
+	&::after {
+		clear: both;
+		content: '.';
+		font-size: 0;
+		height: 0;
+		display: block;
+		visibility: hidden;
+	}
+
+	.play-field-col {
+		box-sizing: border-box;
+
+		&:not(:first-child) {
+			padding-left: 0.5rem;
+		}
+	}
+
+	.play-field-left {
+		@extend .play-field-col;
+
+		width: 15%;
+		float: left;
+	}
+
+	.play-field-right {
+		@extend .play-field-col;
+
+		width: 85%;
+		float: left;
+	}
+}
