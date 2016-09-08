@@ -25,7 +25,8 @@ class Player {
 		ipcRenderer.send('player-value', {
 			time: this.video.currentTime / this.video.duration,
 			volume: this.video.volume,
-			opacity: parseFloat(window.getComputedStyle(this.video).opacity)
+			opacity: parseFloat(window.getComputedStyle(this.video).opacity),
+			loop: this.video.loop
 		});
 		requestAnimationFrame(this.draw.bind(this));
 	}
@@ -38,6 +39,8 @@ class Player {
 			this.video.volume = value;
 		} else if (name === 'opacity') {
 			this.video.style.opacity = value;
+		} else if (name === 'loop') {
+			this.video.loop = value;
 		}
 	}
 

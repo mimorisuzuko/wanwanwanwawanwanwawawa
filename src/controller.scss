@@ -10,14 +10,7 @@ svg {
 	cursor: pointer;
 }
 
-.center {
-	margin-left: auto;
-	margin-right: auto;
-}
-
 button {
-	@extend .center;
-
 	padding: 0.5rem 1rem;
 	border: none;
 	outline: none;
@@ -35,17 +28,14 @@ button {
 }
 
 input[type='file'] {
-	@extend .center;
-
 	display: block;
-	margin-bottom: 0.5rem;
 	width: 100%;
 }
 
 .play-field {
-	@extend .center;
-
 	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
 
 	&::after {
 		clear: both;
@@ -58,10 +48,6 @@ input[type='file'] {
 
 	.play-field-col {
 		box-sizing: border-box;
-
-		&:not(:first-child) {
-			padding-left: 0.5rem;
-		}
 	}
 
 	.play-field-left {
@@ -69,12 +55,17 @@ input[type='file'] {
 
 		width: 15%;
 		float: left;
+
+		> *:not(:last-child) {
+			margin-bottom: 0.3rem;
+		}
 	}
 
 	.play-field-right {
 		@extend .play-field-col;
 
-		width: 85%;
+		width: 83%;
+		margin-left: 2%;
 		float: left;
 	}
 }
