@@ -1,9 +1,10 @@
 body {
-  margin: 0; }
+  margin: 0;
+  font-family: Menlo, Monaco, 'Courier New', monospace; }
 
-canvas {
+svg {
   display: block;
-  background-color: #f0f0f0; }
+  cursor: pointer; }
 
 .center, button, input[type='file'], .play-field {
   margin-left: auto;
@@ -13,6 +14,8 @@ button {
   padding: 0.5rem 1rem;
   border: none;
   outline: none;
+  font: inherit;
+  font-size: 12px;
   cursor: pointer;
   color: white;
   background-color: #ffc166;

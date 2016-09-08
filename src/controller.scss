@@ -2,11 +2,12 @@ $orange: rgb(255, 152, 0);
 
 body {
 	margin: 0;
+	font-family: Menlo, Monaco, 'Courier New', monospace;
 }
 
-canvas {
+svg {
 	display: block;
-	background-color: rgb(240, 240, 240);
+	cursor: pointer;
 }
 
 .center {
@@ -20,6 +21,8 @@ button {
 	padding: 0.5rem 1rem;
 	border: none;
 	outline: none;
+	font: inherit;
+	font-size: 12px;
 	cursor: pointer;
 	color: rgb(255, 255, 255);
 	background-color: lighten($orange, 20);

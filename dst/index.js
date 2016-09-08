@@ -23,7 +23,7 @@ class Player {
 
 	draw() {
 		ipcRenderer.send('player-value', {
-			currentTime: this.video.currentTime / this.video.duration,
+			time: this.video.currentTime / this.video.duration,
 			volume: this.video.volume,
 			opacity: parseFloat(window.getComputedStyle(this.video).opacity)
 		});
@@ -32,7 +32,7 @@ class Player {
 
 	recieveCanvasValue(event, mes) {
 		const {name, value} = mes;
-		if (name === 'currentTime') {
+		if (name === 'time') {
 			this.video.currentTime = this.video.duration * value;
 		} else if (name === 'volume') {
 			this.video.volume = value;
