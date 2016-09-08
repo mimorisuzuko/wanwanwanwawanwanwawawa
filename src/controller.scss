@@ -2,24 +2,20 @@ $orange: rgb(255, 152, 0);
 
 body {
 	margin: 0;
+	font-family: Menlo, Monaco, 'Courier New', monospace;
 }
 
-canvas {
+svg {
 	display: block;
-	background-color: rgb(240, 240, 240);
-}
-
-.center {
-	margin-left: auto;
-	margin-right: auto;
+	cursor: pointer;
 }
 
 button {
-	@extend .center;
-
 	padding: 0.5rem 1rem;
 	border: none;
 	outline: none;
+	font: inherit;
+	font-size: 12px;
 	cursor: pointer;
 	color: rgb(255, 255, 255);
 	background-color: lighten($orange, 20);
@@ -32,17 +28,14 @@ button {
 }
 
 input[type='file'] {
-	@extend .center;
-
 	display: block;
-	margin-bottom: 0.5rem;
 	width: 100%;
 }
 
 .play-field {
-	@extend .center;
-
 	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
 
 	&::after {
 		clear: both;
@@ -55,10 +48,6 @@ input[type='file'] {
 
 	.play-field-col {
 		box-sizing: border-box;
-
-		&:not(:first-child) {
-			padding-left: 0.5rem;
-		}
 	}
 
 	.play-field-left {
@@ -66,12 +55,17 @@ input[type='file'] {
 
 		width: 15%;
 		float: left;
+
+		> *:not(:last-child) {
+			margin-bottom: 0.3rem;
+		}
 	}
 
 	.play-field-right {
 		@extend .play-field-col;
 
-		width: 85%;
+		width: 83%;
+		margin-left: 2%;
 		float: left;
 	}
 }

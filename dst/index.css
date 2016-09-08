@@ -8,6 +8,11 @@ main {
 body {
   margin: 0; }
 
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
 video {
   display: block;
   width: 100%; }
